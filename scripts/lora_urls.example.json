@@ -1,4 +1,4 @@
 {
- "_note": "LoRA name -> fal storage URL. Copy this file to lora_urls.json and fill in your own. Running `lookshot.py frames --lora <path>.safetensors` once uploads your weights to fal storage and registers the key here automatically. Trained weights are never distributed with this repo.",
+ "_note": "LoRA name -> fal storage URL. Copy this file to lora_urls.json and fill in your own. Running `lookshot.py frames --lora <path>.safetensors` once uploads your weights to fal storage and registers the key here automatically. Weights live in GitHub Releases (https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0), not in the repo.",
  "v2_3000": "<fal storage URL>"
 }

@@ -3,13 +3,14 @@
 Paint your own cinematic look onto images with a personal Z-Image LoRA — a small CLI that doubles as a Claude Code skill.
 自分で学習したルックLoRA（Z-Image Turbo）で画像を「塗る」ための小さなCLI。Claude Code のスキルとしても使えます。
 
-**Trained weights are not included.** You train the LoRA on your own retouched stills; this repo only ships the runner.
-（学習済み重みは同梱しません。LoRA はご自身の素材で学習してください）
+**Weights are not in the repo — they ship as a [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0)** (`zimage_v2_3000.safetensors`, CC BY 4.0). Download it, then run `lookshot.py frames --lora <downloaded .safetensors>` once: the weights are uploaded to fal storage and registered in `scripts/lora_urls.json` automatically.
+（重みはリポジトリではなく [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0) で配布。DL後に `--lora <落とした.safetensors>` で一度通せば fal へ自動アップロードされ `lora_urls.json` に登録されます）
+You can of course train your own LoRA on your own stills instead; this repo ships the runner either way.
 
 ## Requirements / 前提
 - A [fal.ai](https://fal.ai) account and `FAL_KEY` in your environment (or a `.env`; point at it with `LOOKLORA_ENV_FILE`)
 - Python 3.8+ / `pip install fal-client requests Pillow`
-- Your own Z-Image LoRA (`.safetensors`)
+- A Z-Image LoRA (`.safetensors`) — grab `zimage_v2_3000.safetensors` from the [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0), or train your own
 
 ## Install / インストール
 ```bash
