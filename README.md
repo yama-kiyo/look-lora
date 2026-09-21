@@ -3,14 +3,19 @@
 Paint your own cinematic look onto images with a personal Z-Image LoRA — a small CLI that doubles as a Claude Code skill.
 自分で学習したルックLoRA（Z-Image Turbo）で画像を「塗る」ための小さなCLI。Claude Code のスキルとしても使えます。
 
-**Weights are not in the repo — they ship as a [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0)** (`zimage_v2_3000.safetensors`, CC BY 4.0). Download it, then run `lookshot.py frames --lora <downloaded .safetensors>` once: the weights are uploaded to fal storage and registered in `scripts/lora_urls.json` automatically.
+**Weights are not in the repo — they ship as a [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0)** (CC BY 4.0). Download one, then run `lookshot.py frames --lora <downloaded .safetensors>` once: the weights are uploaded to fal storage and registered in `scripts/lora_urls.json` automatically.
 （重みはリポジトリではなく [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0) で配布。DL後に `--lora <落とした.safetensors>` で一度通せば fal へ自動アップロードされ `lora_urls.json` に登録されます）
+
+Two generations ship in that Release / 2世代を公開しています:
+- `zimage_v2_3000.safetensors` — recommended default. Trained with captions that describe the subject in full, so the look is separated from content: a **deeper flat, cyan-leaning** grade. Append `, ykflat look`, strength **0.7**.（推奨・既定。被写体を書き切ったキャプションで学習。**より深いフラット・シアン寄り**）
+- `zimage_v1_3000.safetensors` — trained with content-only captions: **closer to neutral** in color, but when the prompt lands near the training domain (wet streets, alleys, figures in coats) the teacher's world tends to bleed through. Strength **0.7–1.0**.（内容のみのキャプションで学習。**色はニュートラル寄り**。教師の領域に近いプロンプトでは教師の世界観が出やすい）
+- Shared side effect: both pull human faces toward East Asian features.（共通の副作用として、人物の造形が東アジア系に寄る傾向があります）
 You can of course train your own LoRA on your own stills instead; this repo ships the runner either way.
 
 ## Requirements / 前提
 - A [fal.ai](https://fal.ai) account and `FAL_KEY` in your environment (or a `.env`; point at it with `LOOKLORA_ENV_FILE`)
 - Python 3.8+ / `pip install fal-client requests Pillow`
-- A Z-Image LoRA (`.safetensors`) — grab `zimage_v2_3000.safetensors` from the [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0), or train your own
+- A Z-Image LoRA (`.safetensors`) — grab `zimage_v2_3000.safetensors` (or `zimage_v1_3000.safetensors`) from the [Release](https://github.com/yama-kiyo/look-lora/releases/tag/v1.0.0), or train your own
 
 ## Install / インストール
 ```bash
