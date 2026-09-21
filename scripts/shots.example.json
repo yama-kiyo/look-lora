@@ -1,0 +1,5 @@
+[
+ {"id": "S01_alley_morning", "prompt": "a narrow back alley between old two-story houses, early morning, sunlight coming from the far end of the alley, power lines overhead, a bicycle leaning on a wall, no people, wide shot, eye level"},
+ {"id": "S02_station_platform", "prompt": "a small rural train platform with a wooden bench, midday, a single person seen from behind standing at the far end looking down the tracks, mountains in the distance, wide shot, low horizon"},
+ {"id": "S03_kitchen_window", "prompt": "an old kitchen interior seen from the doorway, a window above the sink with bright daylight coming through, a kettle on the stove, nobody inside, wide shot", "camera": "static camera, natural light, no color change"}
+]
